@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>FR3 Uploader GitHub</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .free-label {
+      font-size: 0.7rem;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin-left: 6px;
+      color: white;
+    }
+    form {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #238636;
+      color: white;
+      font-weight: bold;
+    }
+    #console {
+      margin-top: 20px;
+      background: #000;
+      color: #0f0;
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+      font-family: monospace;
+      border-radius: 6px;
+      white-space: pre-line;
+    }
+    .success {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #238636;
+      border-radius: 6px;
+      color: #238636;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <h1>FR3 UPLOADER GITHUB<span class="free-label">free</span></h1>
+  </div>
+
+  <form id="uploadForm">
+    <label>Username GitHub
+      <input type="text" id="username" required>
+    </label>
+    <label>Nama Repository
+      <input type="text" id="repo" required>
+    </label>
+    <label>Token Akses Pribadi (PAT)
+      <input type="password" id="token" required>
+    </label>
+    <label>Visibilitas
+      <select id="visibility">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+      </select>
+    </label>
+    <label>File ZIP
+      <input type="file" id="zipFile" accept=".zip" required>
+    </label>
+    <button type="submit">Mulai Upload</button>
+  </form>
+
+  <div id="console">Ready.</div>
+  <div id="successBox" class="success" style="display:none;">
+    ✅ Sukses! <a id="repoLink" href="#" target="_blank">View Repository</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
